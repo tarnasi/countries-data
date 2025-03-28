@@ -43,20 +43,20 @@ const getCountryAndNeighbour = function (country_name) {
     renderCountry(data)
 
     // Get neighbour country
-    const [neighbour] = data.borders;
-    
-    if (!neighbour) return;
+    const neighbour = data.borders;
 
-    // AJAX Call country 2
-    const request2 = new XMLHttpRequest();
-    request2.open('GET', `https://restcountries.com/v3.1/alpha/${neighbour.toLowerCase()}`)
-    request2.send();
+    neighbour.forEach(n => {
+      // AJAX Call country 2
+      const request2 = new XMLHttpRequest();
+      request2.open('GET', `https://restcountries.com/v3.1/alpha/${n.toLowerCase()}`)
+      request2.send();
 
-    request2.addEventListener('load', function() {
-      const [data2] = JSON.parse(this.responseText)
-      console.log(data2);
-      renderCountry(data2, 'neighbour')
-    })
+      request2.addEventListener('load', function() {
+        const [data2] = JSON.parse(this.responseText)
+        console.log(data2);
+        renderCountry(data2, 'neighbour')
+      })
+    });
   });
 };
 
@@ -65,4 +65,4 @@ const getCountryAndNeighbour = function (country_name) {
 //   request.open('GET', 'https://restcountries.com/v3.1/)
 // }
 
-getCountryAndNeighbour("germany")
+getCountryAndNeighbour("iran")

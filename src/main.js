@@ -43,6 +43,6 @@ const getCountryData = function (country_name) {
   });
 };
 
-getCountryData("iran")
+getCountryData("portugal")
 getCountryData("usa")
 getCountryData("germany")

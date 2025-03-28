@@ -65,4 +65,5 @@ const getCountryAndNeighbour = function (country_name) {
 //   request.open('GET', 'https://restcountries.com/v3.1/)
 // }
 
-getCountryAndNeighbour("turkey")
+// getCountryAndNeighbour("turkey")
+getCountryAndNeighbour("venezuela")

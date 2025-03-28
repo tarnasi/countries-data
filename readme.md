@@ -1,6 +1,6 @@
 # Countries App
 
-It showes us the information of any countries.
+It shows us the information of any countries.
 
 ## Main Page
 

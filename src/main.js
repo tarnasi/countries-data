@@ -1,7 +1,6 @@
 "use strict";
 import "./style.css";
 
-const btn = document.querySelector(".btn-country");
 const countriesContainer = document.querySelector(".countries");
 
 //////////////////////////////////////////////
@@ -28,42 +27,33 @@ const renderCountry = function(data, className) {
   countriesContainer.style.opacity = 1;
 }
 
-const getCountryAndNeighbour = function (country_name) {
-  const request = new XMLHttpRequest();
-  request.open("GET", `https://restcountries.com/v3.1/name/${country_name}`);
-  request.send();
-
-  request.addEventListener("load", function () {
-    let data = JSON.parse(this.responseText);
-
-    if (Array.isArray(data)) data = data[0];
-    console.log(data);
-
-    // Render country
-    renderCountry(data)
-
-    // Get neighbour country
-    const neighbour = data.borders;
-
-    neighbour.forEach(n => {
-      // AJAX Call country 2
-      const request2 = new XMLHttpRequest();
-      request2.open('GET', `https://restcountries.com/v3.1/alpha/${n.toLowerCase()}`)
-      request2.send();
-
-      request2.addEventListener('load', function() {
-        const [data2] = JSON.parse(this.responseText)
-        console.log(data2);
-        renderCountry(data2, 'neighbour')
-      })
+function renderNeighbour(borders) {
+  borders.forEach(border => {
+    fetch(`https://restcountries.com/v3.1/alpha/${border.toLowerCase()}`)
+    .then(resp => resp.json())
+    .then(data => {
+      if (data.length > 0) {
+        if (Array.isArray(data)) {
+          return renderCountry(data[0], 'neighbour')
+        }
+        return renderCountry(data, 'neighbour')
+      }
     });
   });
+}
+
+const getCountryAndNeighbour = function (country_name) {
+  fetch(
+    `https://restcountries.com/v3.1/name/${country_name}`
+  ).then(response => {
+    return response.json()
+  }).then(data => {
+    if (Array.isArray(data)) data = data[0];
+
+    // Render country and neibours
+    renderCountry(data)
+    renderNeighbour(data.borders)
+  })
 };
 
-// constgetCountryAndNeighbour = function (country) {
-//   const request = new XMLHttpRequest();
-//   request.open('GET', 'https://restcountries.com/v3.1/)
-// }
-
-// getCountryAndNeighbour("turkey")
-getCountryAndNeighbour("venezuela")
+getCountryAndNeighbour("iran")

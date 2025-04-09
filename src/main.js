@@ -1,6 +1,7 @@
 "use strict";
 import "./style.css";
 
+const btnCountry = document.querySelector('.btn-country')
 const countriesContainer = document.querySelector(".countries");
 
 //////////////////////////////////////////////
@@ -23,7 +24,7 @@ const renderCountry = function(data, className) {
     </article>
   `;
 
-  countriesContainer.insertAdjacentHTML("beforeend", html);
+  countriesContainer.innerHTML = html
   countriesContainer.style.opacity = 1;
 }
 
@@ -31,29 +32,24 @@ function renderNeighbour(borders) {
   borders.forEach(border => {
     fetch(`https://restcountries.com/v3.1/alpha/${border.toLowerCase()}`)
     .then(resp => resp.json())
+    .then(data => Array.isArray(data) ? data[0] : data)
     .then(data => {
-      if (data.length > 0) {
-        if (Array.isArray(data)) {
-          return renderCountry(data[0], 'neighbour')
-        }
-        return renderCountry(data, 'neighbour')
-      }
+      return renderCountry(data, 'neighbour')
     });
   });
 }
 
 const getCountryAndNeighbour = function (country_name) {
-  fetch(
-    `https://restcountries.com/v3.1/name/${country_name}`
-  ).then(response => {
-    return response.json()
-  }).then(data => {
-    if (Array.isArray(data)) data = data[0];
-
-    // Render country and neibours
+  fetch(`https://restcountries.com/v3.1/name/${country_name}`)
+  .then(response => response.json())
+  .then(data => Array.isArray(data) ? data[0] : data)
+  .then(data => {
     renderCountry(data)
-    renderNeighbour(data.borders)
-  })
+    return data.borders
+  }).catch(err => console.log(err))
+  // .then(borders => renderNeighbour(borders))
 };
 
-getCountryAndNeighbour("iran")
+btnCountry.addEventListener('click', function(event) {
+  getCountryAndNeighbour("italy")
+})

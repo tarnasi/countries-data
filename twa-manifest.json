@@ -35,7 +35,12 @@
   "fullScopeUrl": "https://borderless.devdiaries.work/",
   "minSdkVersion": 21,
   "orientation": "default",
-  "fingerprints": [],
+  "fingerprints": [
+    {
+      "name": "SHA256",
+      "value": "B1:64:0B:A1:11:C9:2B:84:31:EB:7C:84:EA:4D:82:AF:75:95:38:60:D2:9E:FF:06:3C:BC:E7:9F:1D:05:DD:79"
+    }
+  ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
   "appVersion": "1"

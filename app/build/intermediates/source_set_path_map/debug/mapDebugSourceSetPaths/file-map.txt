@@ -1,0 +1,10 @@
+work.devdiaries.borderless.twa.app-core-1.1.0-0 C:\Users\sh_ta\.gradle\caches\8.8\transforms\2144911bb09dce3a07f407e3b390637e\transformed\core-1.1.0\res
+work.devdiaries.borderless.twa.app-browser-1.4.0-1 C:\Users\sh_ta\.gradle\caches\8.8\transforms\b511174c15fdde7dea3e957094b4390b\transformed\browser-1.4.0\res
+work.devdiaries.borderless.twa.app-androidbrowserhelper-2.5.0-2 C:\Users\sh_ta\.gradle\caches\8.8\transforms\d3335fbdff4200978ad121d7b141def7\transformed\androidbrowserhelper-2.5.0\res
+work.devdiaries.borderless.twa.app-pngs-3 D:\projects\idea_projects\countries-data\app\build\generated\res\pngs\debug
+work.devdiaries.borderless.twa.app-resValues-4 D:\projects\idea_projects\countries-data\app\build\generated\res\resValues\debug
+work.devdiaries.borderless.twa.app-packageDebugResources-5 D:\projects\idea_projects\countries-data\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+work.devdiaries.borderless.twa.app-packageDebugResources-6 D:\projects\idea_projects\countries-data\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+work.devdiaries.borderless.twa.app-debug-7 D:\projects\idea_projects\countries-data\app\build\intermediates\merged_res\debug\mergeDebugResources
+work.devdiaries.borderless.twa.app-debug-8 D:\projects\idea_projects\countries-data\app\src\debug\res
+work.devdiaries.borderless.twa.app-main-9 D:\projects\idea_projects\countries-data\app\src\main\res

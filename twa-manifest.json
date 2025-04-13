@@ -19,8 +19,8 @@
     "path": "D:\\projects\\idea_projects\\countries-data\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "1.1",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://borderless.devdiaries.work/manifest.webmanifest",

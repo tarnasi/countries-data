@@ -1,4 +1,4 @@
-#Mon Apr 14 12:31:37 GST 2025
+#Mon Apr 14 12:32:05 GST 2025
 base.0=D\:\\projects\\idea_projects\\countries-data\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "serve ./dist"
+    "start": "yarn build && serve ./dist"
   },
   "devDependencies": {
     "vite": "^6.2.0"
